@@ -1,0 +1,528 @@
+html,
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.top-btn {
+    opacity: 0;
+    visibility: hidden;
+    width: 46px;
+    height: 46px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgb(0, 0, 0, .15);
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.topscroll {
+    opacity: 1;
+    visibility: visible;
+    animation: topscroll .3s;
+}
+
+@keyframes topscroll {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.top-btn:hover {
+    background-color: rgb(250, 180, 50);
+}
+
+.fa-angle-up {
+    font-size: 26px;
+    color: rgb(100, 100, 100);
+}
+
+.top-btn:hover .fa-angle-up {
+    color: white;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    /* 記得要放box-sizing,不然會跑版 */
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 10;
+    box-shadow: 0 5px 8px rgb(0, 0, 0, .05);
+    transition: .3s;
+}
+
+.headerscroll {
+    height: 70px;
+    opacity: .95;
+}
+
+.header .log {
+    width: 180px;
+    height: auto;
+}
+
+.header .log a {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.header .log img {
+    width: 100%;
+    height: auto;
+    /* 圖片旁邊有看不見的文字，所以都要使用vertical:middle對齊 */
+    vertical-align: middle;
+}
+
+.navbar {
+    display: flex;
+    height: 100%;
+}
+
+.navbar-txt {
+    display: flex;
+    margin: 0 18px 0 0;
+}
+
+.navbar a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.navbar-txt>li {
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar-txt>li>a {
+    transition: .2s;
+}
+
+.navbar-txt>li:hover>a,
+.navbar-txt li:nth-child(2):hover .fa-angle-down,
+.navbar-icon a:hover i {
+    color: rgb(185, 135, 50);
+}
+
+.navbar-txt-menu {
+    display: none;
+    position: absolute;
+    top: 90px;
+    box-shadow: 0 5px 8px rgb(0, 0, 0, .05);
+}
+
+.navbar_menuscroll {
+    top: 70px;
+}
+
+.navbar-txt>li:nth-child(2):hover .navbar-txt-menu {
+    display: block;
+}
+
+.navbar-txt-menu li a {
+    padding: 16px;
+    background-color: #fff;
+    width: 120px;
+}
+
+.navbar-txt-menu a:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.fa-angle-down {
+    font-size: 16px;
+    color: black;
+    margin: 0 0 0 5px;
+}
+
+.navbar-icon {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icon a:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icon a:first-child input {
+    border: none;
+    color: rgb(100, 100, 100);
+    font-size: 14px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    outline: none;
+    padding: 2px;
+    width: 0;
+    display: none;
+    transform: translate(0, 1px);
+}
+
+.navbar-icon a:first-child:hover input {
+    display: inline-block;
+    width: 160px;
+    animation: searchtxt 0.5s;
+}
+
+@keyframes searchtxt {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 160px;
+    }
+}
+
+.navbar-icon i {
+    padding: 0 10px;
+    color: black;
+    font-size: 18px;
+    transition: .2s;
+}
+
+.navbar-icon a:nth-child(3) {
+    position: relative;
+}
+
+#cart-number {
+    width: 16px;
+    height: 18px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow {
+    overflow: hidden;
+    width: 100%;
+    height: 720px;
+}
+
+.slideshow-img {
+    /* width: 300%; 用js設定 */
+    height: 750px;
+    /* 要改變位置一定要加position */
+    position: relative;
+    top: 0px;
+    left: 0;
+    transform: translate(-20%, 0);
+}
+
+.slideshow-img div {
+    /* width: 33.33%; 用js設定 */
+    height: 720px;
+    float: left;
+}
+
+.slideshow-img div:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.slideshow-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.slideshow-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    z-index: 10;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.slideshow-btn-style {
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #fff;
+    opacity: .6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slideshow-btn-style .fa {
+    font-size: 26px;
+    color: black;
+}
+
+.slideshow-navList {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, 0);
+}
+
+.slideshow-navList a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    opacity: .6;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.container-middle {
+    width: 70%;
+    margin: auto;
+}
+
+.state {
+    width: 100%;
+}
+
+.txt-style {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin: 80px 0 40px 0;
+}
+
+.img-style {
+    display: flex;
+    width: 100%;
+}
+
+.stateimg-wrap:nth-child(1) {
+    width: 60%;
+    height: 400px;
+}
+
+.stateimg-wrap:nth-child(2) {
+    width: 40%;
+    height: 400px;
+}
+
+.state-imgframe {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.stateimg-wrap:nth-child(1) .state-imgframe {
+    height: 100%;
+}
+
+.stateimg-wrap:nth-child(2) .state-imgframe {
+    height: 50%;
+}
+
+.state-imgframe:hover .hover-background {
+    opacity: 1;
+}
+
+.state-imgframe:hover .state-txt {
+    bottom: 50px;
+    opacity: 1;
+}
+
+.state-txt {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: 20;
+    transition: .5s;
+}
+
+.state-txt p {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.state-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hover-background {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 0.6));
+    transition: .5s;
+}
+
+.state-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.news {
+    margin: 0 0 80px 0;
+}
+
+.news-imgframe {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-txt {
+    width: 50%;
+    height: auto;
+    padding: 0 20px;
+}
+
+.news>div:nth-child(3) .news-txt {
+    text-align: right;
+    height: auto;
+}
+
+.news-txt p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.news-img {
+    width: 50%;
+    height: 260px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.news>div:nth-child(2) .news-img {
+    order: -1;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+
+.imgleft {
+    animation: imgleft 1s;
+}
+
+@keyframes imgleft {
+    0% {
+        left: -600px;
+        opacity: 0;
+    }
+
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.imgright {
+    animation: imgright 1s;
+}
+
+@keyframes imgright {
+    0% {
+        right: -600px;
+        opacity: 0;
+    }
+
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: auto;
+    background-color: rgb(245, 245, 245);
+    position: relative;
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 0 120px 0;
+}
+
+.footer-txt {
+    margin: 0 76px;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+}
+
+.list-unstyled li {
+    font-size: 14px;
+    margin: 16px 0;
+}
+
+.footer span {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translate(-50%, 0);
+    font-size: 9px;
+    color: rgb(100, 100, 100);
+}
