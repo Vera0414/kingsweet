@@ -526,3 +526,82 @@ body {
     font-size: 9px;
     color: rgb(100, 100, 100);
 }
+
+/* --------------------產品頁面-------------------- */
+
+#commodity {
+    margin: 170px 0 0 0;
+}
+
+.commodity-wrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.commodity-frame {
+    width: 25%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 100px 0;
+}
+
+/* 如果元素裡面沒有內容可使用偽類empty */
+.commodity-frame:empty{
+    display: none;
+}
+
+.commodity-frame:hover .commodity-btn {
+    opacity: 1;
+    bottom: 0;
+}
+
+.commodity-img {
+    width: 80%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.commodity-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.commodity-btn {
+    opacity: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(250, 150, 0);
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    transition: .3s;
+}
+
+.commodity-btn a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.commodity-txt h4 {
+    font-size: 16px;
+    padding: 20px 0 16px 0;
+    text-align: center;
+}
+
+.commodity-txt p {
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+    text-align: center;
+}

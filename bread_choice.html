@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>精選麵包</title>
+    <link rel="icon" type="image/x-icon" href="./image/logo_icon.png">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="log">
+                <a href="./index.html"><img src="./image/logo.png"></a>
+            </div>
+            <div class="navbar">
+                <ul class="navbar-txt">
+                    <li><a href="./index.html">首頁</a></li>
+                    <li><a href="#">麵包專區</a><i class="fa fa-angle-down" aria-hidden="true"></i>
+                        <ul class="navbar-txt-menu">
+                            <li><a href="#">吐司</a></li>
+                            <li><a href="#">貝果</a></li>
+                            <li><a href="#">精選麵包</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">手工點心</a></li>
+                    <li><a href="#">門市據點</a></li>
+                </ul>
+                <div class="navbar-icon">
+                    <a href="javascript:void(0)" title="搜尋">
+                        <input type="text" placeholder="搜尋...">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" title="登入/註冊"><i class="fa fa-user" aria-hidden="true"></i></a>
+                    <a href="#" title="購物車">
+                        <span id="cart-number">0</span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-middle">
+        <div id="commodity">
+            <div class="txt-style">
+                <h1>精選麵包</h1>
+            </div>
+            <div class="commodity-wrap">
+                <div class="commodity-frame" v-for="(item,index) in bread">
+                    <div class="commodity-img" v-if="item.type==='choice'">
+                        <img :src="item.img">
+                        <div class="commodity-btn">
+                            <a href="javascript:void(0)">加入購物車</a>
+                        </div>
+                    </div>
+                    <div class="commodity-txt" v-if="item.type==='choice'">
+                        <h4>{{item.name}}</h4>
+                        <p>NT${{item.price}}/{{item.unit}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="footer-wrap">
+            <div class="footer-txt">
+                <div class="description">
+                    <h3>關於我們</h3>
+                </div>
+                <div class="list-unstyled">
+                    <ul>
+                        <li>品牌介紹</li>
+                        <li>產品說明</li>
+                        <li>聯繫我們</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-txt">
+                <div class="description">
+                    <h3>常見問題</h3>
+                </div>
+                <div class="list-unstyled">
+                    <ul>
+                        <li>購物流程說明</li>
+                        <li>訂單查詢</li>
+                        <li>退換貨說明</li>
+                        <li>物流說明</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-txt">
+                <div class="description">
+                    <h3>社群平台</h3>
+                </div>
+                <div class="list-unstyled">
+                    <ul>
+                        <li>YOUTUBE</li>
+                        <li>FACEBOOK</li>
+                        <li>LINE</li>
+                        <li>INSTAGRAM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <span>© Copyright 2022 - WU WEN CHI</span>
+    </div>
+
+
+
+    <script src="./js/style.js"></script>
+    <script src="./js/commodity.js"></script>
+
+</body>
+
+</html>
