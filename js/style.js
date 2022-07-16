@@ -125,6 +125,52 @@ window.onload = function () {
 
 
 
+    // --------------------登入/註冊的密碼顯示與隱藏--------------------
+
+    // 登入的密碼
+    let login_password = document.querySelector(".login-passwordinput");
+    let login_passwordeye = document.querySelector(".login-eye");
+    if (login_password && login_passwordeye) {
+        login_passwordeye.onclick = function () {
+            if (login_password.type === "password") {
+                login_password.type = "text";
+                login_passwordeye.innerHTML = "visibility";
+            } else {
+                login_password.type = "password";
+                login_passwordeye.innerHTML = "visibility_off";
+            }
+        }
+    }
+
+    // 註冊的密碼
+    let register_passwords = document.querySelectorAll(".middle-style .register-passwordinput");
+    let register_passwordeyes = document.querySelectorAll(".middle-style .register-eye");
+    for (let i = 0; i < register_passwordeyes.length; i++) {
+        if (register_passwords && register_passwordeyes[i]) {
+            register_passwordeyes[0].onclick = function () {
+                if (register_passwords[0].type === "password") {
+                    register_passwords[0].type = "text";
+                    register_passwordeyes[0].innerHTML = "visibility";
+                } else {
+                    register_passwords[0].type = "password";
+                    register_passwordeyes[0].innerHTML = "visibility_off";
+                }
+            }
+            register_passwordeyes[1].onclick = function () {
+                if (register_passwords[1].type === "password") {
+                    register_passwords[1].type = "text";
+                    register_passwordeyes[1].innerHTML = "visibility";
+                } else {
+                    register_passwords[1].type = "password";
+                    register_passwordeyes[1].innerHTML = "visibility_off";
+                }
+            }
+        }
+    };
+
+
+
+
 
     window.onscroll = function () {
 

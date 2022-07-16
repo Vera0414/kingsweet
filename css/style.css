@@ -321,10 +321,10 @@ body {
 }
 
 .txt-style {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     text-align: center;
-    margin: 80px 0 40px 0;
+    margin: 80px 0 50px 0;
 }
 
 .img-style {
@@ -551,7 +551,7 @@ body {
 }
 
 /* 如果元素裡面沒有內容可使用偽類empty */
-.commodity-frame:empty{
+.commodity-frame:empty {
     display: none;
 }
 
@@ -604,4 +604,111 @@ body {
     font-size: 14px;
     color: rgb(100, 100, 100);
     text-align: center;
+}
+
+/* --------------------登入/註冊-------------------- */
+
+.middle-style {
+    margin: 100px 0 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-area input {
+    width: 380px;
+    height: 50px;
+    border-radius: 3px;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid rgb(100, 100, 100);
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.password-style {
+    position: relative;
+}
+
+.password-style span {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: rgb(100, 100, 100);
+}
+
+.login-register-btn {
+    width: 150px;
+    height: 46px;
+    background-color: rgb(50, 50, 50);
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.login-register-btn:hover {
+    background-color: rgb(250, 150, 0);
+}
+
+.login-register-hint {
+    font-size: 13px;
+}
+
+.login-register-hint a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(25, 125, 175);
+}
+
+/* --------------------門市據點-------------------- */
+
+.store-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store-wrap > div:first-child{
+    width: 55%;
+}
+
+.store-wrap > div:last-child{
+    width: 45%;
+}
+
+.store-wrap iframe{
+    width: 100%;
+    height: 360px;
+}
+
+.store-txt{
+    padding-left: 50px;
+}
+
+.store-txt h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.store-txt p{
+    font-size: 16px;
+    line-height: 26px;
 }
