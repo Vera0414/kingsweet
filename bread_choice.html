@@ -59,15 +59,47 @@
             </div>
             <div class="commodity-wrap">
                 <div class="commodity-frame" v-for="(item,index) in bread">
-                    <div class="commodity-img" v-if="item.type==='choice'">
-                        <img :src="item.img">
-                        <div class="commodity-btn">
-                            <a href="javascript:void(0)">加入購物車</a>
+                    <div class="commodity-content" v-if="item.type==='choice'">
+                        <div class="commodity-img">
+                            <img :src="item.img">
+                            <div class="commodity-btn">
+                                <a href="javascript:void(0)">加入購物車</a>
+                            </div>
+                        </div>
+                        <div class="commodity-txt">
+                            <h4>{{item.name}}</h4>
+                            <p>NT${{item.price}}/{{item.unit}}</p>
                         </div>
                     </div>
-                    <div class="commodity-txt" v-if="item.type==='choice'">
-                        <h4>{{item.name}}</h4>
-                        <p>NT${{item.price}}/{{item.unit}}</p>
+                    <div class="commodity-detail" v-if="item.type==='choice'">
+                        <div class="commodity-detail-container">
+                            <div class="commodity-detail-fork">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="commodity-detail-img">
+                                <img :src="item.img">
+                            </div>
+                            <div class="commodity-detail-txt">
+                                <h3>{{item.name}}</h3>
+                                <p>主要成份：{{item.ingredient}}</p>
+                                <p>NT${{item.price}}/{{item.unit}}</p>
+                                <div class="commodity-detail-number">
+                                    <label for="detail-number">數量</label>
+                                    <input type="button" :value="minus" @click="minusnum(item)">
+                                    <input type="number" class="num" :value="item.number" oninput="if(value>10)value=10"
+                                        oninput="if(value<0)value=0">
+                                    <input type="button" :value="add" @click="addnum(item)">
+                                </div>
+                                <div class="commodity-detail-btn">
+                                    <span>
+                                        <p>加入購物車</p>
+                                    </span>
+                                    <span>
+                                        <p>立即購買</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -125,6 +125,25 @@ window.onload = function () {
 
 
 
+    // --------------------產品頁面--------------------
+    let commodity_content = document.querySelectorAll(".commodity-content");
+    let commodity_detail = document.querySelectorAll(".commodity-detail");
+    let commodity_fork = document.querySelectorAll(".commodity-detail-fork");
+    for (let i = 0; i < commodity_content.length; i++) {
+
+        commodity_content[i].onclick = function () {
+            commodity_detail[i].style.opacity = 1;
+            commodity_detail[i].style.zIndex = 100;
+        }
+
+        commodity_fork[i].onclick = function () {
+            commodity_detail[i].style.opacity = 0;
+            commodity_detail[i].style.zIndex = -100;
+        }
+    }
+
+
+
     // --------------------登入/註冊的密碼顯示與隱藏--------------------
 
     // 登入的密碼
