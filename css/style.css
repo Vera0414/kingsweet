@@ -60,6 +60,16 @@ body {
     position: relative;
 }
 
+.header-shadow {
+    width: 0;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
 .header {
     width: 100%;
     height: 90px;
@@ -67,18 +77,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 120px;
+    padding: 0 50px;
     /* 記得要放box-sizing,不然會跑版 */
     box-sizing: border-box;
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     box-shadow: 0 5px 8px rgb(0, 0, 0, .05);
     transition: .3s;
 }
 
 .headerscroll {
     height: 70px;
-    opacity: .95;
 }
 
 .header .log {
@@ -99,13 +108,75 @@ body {
     vertical-align: middle;
 }
 
-.navbar {
+#burger:checked+label .ham-top {
+    transform: rotate(34deg);
+    transform-origin: top left;
+}
+
+#burger:checked+label .ham-middle {
+    display: none;
+}
+
+#burger:checked+label .ham-bottom {
+    transform: rotate(-34deg);
+    transform-origin: bottom left;
+}
+
+#burger:checked+label~.navbar {
+    left: 0;
+}
+
+.navbar-hamburger {
+    width: 30px;
+    height: 19px;
     display: flex;
-    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    transition: .5s;
+}
+
+.ham-top {
+    top: 0;
+}
+
+.ham-bottom {
+    bottom: 0;
+}
+
+.slideshow {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 90px 0 0 0;
+    position: relative;
+}
+
+.navbar {
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: auto;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 500;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    transition: .8s;
 }
 
 .navbar-txt {
     display: flex;
+    flex-direction: column;
     margin: 0 18px 0 0;
 }
 
@@ -114,14 +185,33 @@ body {
     text-decoration: none;
     color: black;
     font-size: 14px;
+    padding: 14px 16px;
 }
 
 .navbar-txt>li {
-    padding: 0 16px;
+    padding: 0 22px;
     height: 100%;
-    display: flex;
-    align-items: center;
+    display: block;
     cursor: pointer;
+}
+
+.navbar-txt>li:nth-child(4) {
+    position: relative;
+    padding: 0 22px 16px 22px;
+}
+
+.navbar-txt>li:nth-child(4):after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 32px;
+    width: 210px;
+    height: 1px;
+    background-color: rgb(200, 200, 200);
+}
+
+.navbar-txt>li:nth-child(5) {
+    padding: 16px 22px 0 22px;
 }
 
 .navbar-txt>li>a {
@@ -135,28 +225,16 @@ body {
 }
 
 .navbar-txt-menu {
-    display: none;
-    position: absolute;
-    top: 90px;
-    box-shadow: 0 5px 8px rgb(0, 0, 0, .05);
-}
-
-.navbar_menuscroll {
-    top: 70px;
-}
-
-.navbar-txt>li:nth-child(2):hover .navbar-txt-menu {
-    display: block;
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 20px;
+    transition: .5s;
 }
 
 .navbar-txt-menu li a {
-    padding: 16px;
+    padding: 10px;
     background-color: #fff;
     width: 120px;
-}
-
-.navbar-txt-menu a:hover {
-    background-color: rgb(235, 235, 235);
 }
 
 .fa-angle-down {
@@ -173,39 +251,29 @@ body {
 .navbar-icon a:first-child {
     display: flex;
     align-items: center;
+    margin: 50px 30px 12px 30px;
+    background-color: rgb(245, 245, 245);
+    padding: 0;
 }
 
 .navbar-icon a:first-child input {
     border: none;
     color: rgb(100, 100, 100);
     font-size: 14px;
-    border-bottom: 1px solid rgb(100, 100, 100);
     outline: none;
-    padding: 2px;
-    width: 0;
-    display: none;
-    transform: translate(0, 1px);
-}
-
-.navbar-icon a:first-child:hover input {
-    display: inline-block;
     width: 160px;
-    animation: searchtxt 0.5s;
+    transform: translate(0, 1px);
+    background-color: rgb(245, 245, 245);
+    padding: 12px 15px;
 }
 
-@keyframes searchtxt {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 160px;
-    }
+.navbar-icon a:not(:first-child) {
+    display: none;
 }
 
 .navbar-icon i {
-    padding: 0 10px;
-    color: black;
+    padding-right: 12px;
+    color: rgb(150, 150, 150);
     font-size: 18px;
     transition: .2s;
 }
@@ -228,15 +296,9 @@ body {
     align-items: center;
 }
 
-.slideshow {
-    overflow: hidden;
-    width: 100%;
-    height: 720px;
-}
-
 .slideshow-img {
     /* width: 300%; 用js設定 */
-    height: 750px;
+    height: auto;
     /* 要改變位置一定要加position */
     position: relative;
     top: 0px;
@@ -244,16 +306,16 @@ body {
     transform: translate(-20%, 0);
 }
 
-.slideshow-img div {
-    /* width: 33.33%; 用js設定 */
-    height: 720px;
-    float: left;
-}
-
-.slideshow-img div:after {
+.slideshow-img:after {
     content: "";
     display: block;
     clear: both;
+}
+
+.slideshow-img div {
+    /* width: 33.33%; 用js設定 */
+    height: auto;
+    float: left;
 }
 
 .slideshow-img img {
@@ -312,7 +374,7 @@ body {
 }
 
 .container-middle {
-    width: 70%;
+    width: 90%;
     margin: auto;
 }
 
@@ -329,17 +391,18 @@ body {
 
 .img-style {
     display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
 .stateimg-wrap:nth-child(1) {
-    width: 60%;
-    height: 400px;
+    width: 100%;
+    height: 300px;
 }
 
 .stateimg-wrap:nth-child(2) {
-    width: 40%;
-    height: 400px;
+    width: 100%;
+    height: 600px;
 }
 
 .state-imgframe {
@@ -356,21 +419,11 @@ body {
     height: 50%;
 }
 
-.state-imgframe:hover .hover-background {
-    opacity: 1;
-}
-
-.state-imgframe:hover .state-txt {
-    bottom: 50px;
-    opacity: 1;
-}
-
 .state-txt {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 50px;
     width: 100%;
-    opacity: 0;
     z-index: 20;
     transition: .5s;
 }
@@ -389,7 +442,6 @@ body {
 }
 
 .hover-background {
-    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -414,12 +466,17 @@ body {
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.news .news-imgframe:nth-child(2) {
+    margin-bottom: 30px;
+}
+
 .news-txt {
-    width: 50%;
+    width: 100%;
     height: auto;
     padding: 0 20px;
 }
@@ -430,19 +487,20 @@ body {
 }
 
 .news-txt p {
+    text-align: center;
     margin: 10px 0;
     font-size: 14px;
 }
 
 .news-img {
-    width: 50%;
+    width: 100%;
     height: 260px;
     position: relative;
     top: 0;
     left: 0;
 }
 
-.news>div:nth-child(2) .news-img {
+.news .news-imgframe .news-img {
     order: -1;
 }
 
@@ -454,6 +512,14 @@ body {
     top: 0;
     position: absolute;
     right: 0;
+}
+
+.align-left{
+    object-position: top left;
+}
+
+.align-right{
+    object-position: top right;
 }
 
 .imgleft {
@@ -497,13 +563,14 @@ body {
 
 .footer-wrap {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    padding: 80px 0 120px 0;
+    flex-wrap: wrap;
+    padding: 80px 50px 120px 50px;
 }
 
 .footer-txt {
-    margin: 0 76px;
+    width: 50%;
 }
 
 .description {

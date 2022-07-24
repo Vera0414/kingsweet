@@ -125,6 +125,34 @@ window.onload = function () {
 
 
 
+    // --------------------手機版選單--------------------
+    // 選單顯示/隱藏
+    let header_shadow = document.querySelector(".header-shadow");
+    let navbar_hamburger = document.querySelector(".navbar-hamburger");
+    navbar_hamburger.onclick = function () {
+        if (header_shadow.style.width === "100%") {
+            header_shadow.style.width = 0;
+        } else {
+            header_shadow.style.width = 100 + "%";
+        }
+    }
+
+    // 麵包專區-下拉式選單
+    let navbar_txt_li = document.querySelectorAll(".navbar-txt li");
+    let navbar_txt_menu = document.querySelector(".navbar-txt-menu");
+    for (let i = 0; i < navbar_txt_li.length; i++) {
+        navbar_txt_li[1].onclick = function () {
+            if (navbar_txt_menu.style.maxHeight === "100%") {
+                navbar_txt_menu.style.maxHeight = 0;
+            }
+            else {
+                navbar_txt_menu.style.maxHeight = 100 + "%";
+            }
+        }
+    }
+
+
+
     // --------------------產品頁面--------------------
     let commodity_content = document.querySelectorAll(".commodity-content");
     let commodity_detail = document.querySelectorAll(".commodity-detail");
