@@ -505,11 +505,11 @@ body {
     object-fit: cover;
 }
 
-.align-left{
+.align-left {
     object-position: top left;
 }
 
-.align-right{
+.align-right {
     object-position: top right;
 }
 
@@ -587,7 +587,7 @@ body {
 /* --------------------產品頁面-------------------- */
 
 #commodity {
-    margin: 170px 0 0 0;
+    margin: 130px 0 0 0;
 }
 
 .commodity-wrap {
@@ -598,22 +598,17 @@ body {
 }
 
 .commodity-frame {
-    width: 25%;
+    width: 50%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 0 100px 0;
+    margin: 0 0 150px 0;
 }
 
 /* 如果元素裡面沒有內容可使用偽類empty */
 .commodity-frame:empty {
     display: none;
-}
-
-.commodity-frame:hover .commodity-btn {
-    opacity: 1;
-    bottom: 0;
 }
 
 .commodity-content {
@@ -625,7 +620,6 @@ body {
     height: auto;
     margin: auto;
     position: relative;
-    overflow: hidden;
 }
 
 .commodity-img img {
@@ -634,13 +628,12 @@ body {
 }
 
 .commodity-btn {
-    opacity: 0;
     width: 100%;
-    height: 50px;
+    height: 45px;
     background-color: rgb(250, 150, 0);
     position: absolute;
     left: 0;
-    bottom: -100%;
+    bottom: -140px;
     transition: .3s;
 }
 
@@ -653,6 +646,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
 }
 
 .commodity-txt h4 {
@@ -682,12 +677,13 @@ body {
 }
 
 .commodity-detail-container {
-    width: 60%;
-    height: 420px;
+    width: 80%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    flex-direction: column;
 }
 
 .commodity-detail-fork {
@@ -709,7 +705,7 @@ body {
 
 .commodity-detail-img,
 .commodity-detail-txt {
-    width: 50%;
+    width: 100%;
     height: 100%;
     background-color: #fff;
 }
@@ -721,13 +717,13 @@ body {
 }
 
 .commodity-detail-img img {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
 }
 
 .commodity-detail-txt {
-    padding: 50px;
+    padding: 0 20px 100px 20px;
     box-sizing: border-box;
     position: relative;
 }
@@ -735,13 +731,13 @@ body {
 .commodity-detail-txt h3 {
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .commodity-detail-txt>p {
-    font-size: 16px;
-    line-height: 30px;
-    margin: 20px 0;
+    font-size: 14px;
+    line-height: 26px;
+    margin: 10px 0;
 }
 
 .commodity-detail-txt>p:nth-child(3) {
@@ -790,8 +786,9 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 50px;
-    right: 30px;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .commodity-detail-btn span {
@@ -799,10 +796,11 @@ body {
     border-radius: 5px;
     font-size: 16px;
     color: #fff;
-    margin: 0 10px;
+    margin: 0 8px;
     text-align: center;
     cursor: pointer;
-    padding: 16px 26px;
+    padding: 12px 16px;
+    width: max-content;
 }
 
 .commodity-detail-btn span:hover {

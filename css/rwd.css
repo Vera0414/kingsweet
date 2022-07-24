@@ -23,6 +23,28 @@
     .footer-wrap {
         padding: 80px 80px 120px 80px;
     }
+
+    .commodity-frame {
+        width: 33.33%;
+    }
+
+    .commodity-btn {
+        height: 50px;
+    }
+
+    .commodity-detail-img img {
+        width: 60%;
+        height: 60%;
+    }
+
+    .commodity-detail-container {
+        width: 70%;
+    }
+
+    .commodity-detail-txt>p {
+        font-size: 16px;
+        line-height: 30px;
+    }
 }
 
 @media (min-width:768px) {
@@ -94,6 +116,50 @@
     .footer-txt {
         width: auto;
         margin: 0 50px;
+    }
+
+    #commodity {
+        margin: 150px 0 0 0;
+    }
+
+    .commodity-detail-container {
+        width: 80%;
+        height: 420px;
+        flex-direction: row;
+    }
+
+    .commodity-detail-img img {
+        width: 90%;
+        height: 90%;
+    }
+
+    .commodity-detail-img,
+    .commodity-detail-txt {
+        width: 50%;
+    }
+
+    .commodity-detail-txt {
+        padding: 50px;
+    }
+
+    .commodity-detail-txt h3 {
+        margin-bottom: 20px;
+    }
+
+    .commodity-detail-txt>p {
+        margin: 20px 0;
+    }
+
+    .commodity-detail-btn {
+        right: 30px;
+        left: 0;
+        bottom: 50px;
+        transform: translate(0, 0);
+    }
+
+    .commodity-detail-btn span {
+        margin: 0 7px;
+        padding: 16px 26px;
     }
 }
 
@@ -237,6 +303,37 @@
         width: auto;
         margin: 0 76px;
     }
+
+    #commodity {
+        margin: 170px 0 0 0;
+    }
+
+    .commodity-frame {
+        width: 25%;
+        margin: 0 0 100px 0;
+    }
+
+    .commodity-img {
+        overflow: hidden;
+    }
+
+    .commodity-btn {
+        opacity: 0;
+        bottom: -100%;
+    }
+
+    .commodity-frame:hover .commodity-btn {
+        opacity: 1;
+        bottom: 0;
+    }
+
+    .commodity-detail-container {
+        width: 70%;
+    }
+
+    .commodity-detail-btn span {
+        margin: 0 10px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -265,5 +362,9 @@
         justify-content: center;
         flex-wrap: nowrap;
         padding: 80px 0 120px 0;
+    }
+
+    .commodity-detail-container {
+        width: 60%;
     }
 }
