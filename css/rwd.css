@@ -173,6 +173,10 @@
         width: 50%;
     }
 
+    .news-img img {
+        height: 100%;
+    }
+
     .news>div:nth-child(3) .news-img {
         order: 1;
     }
