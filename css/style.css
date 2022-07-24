@@ -72,7 +72,7 @@ body {
 
 .header {
     width: 100%;
-    height: 90px;
+    height: 70px;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -86,13 +86,10 @@ body {
     transition: .3s;
 }
 
-.headerscroll {
-    height: 70px;
-}
-
 .header .log {
     width: 180px;
     height: auto;
+    z-index: 600;
 }
 
 .header .log a {
@@ -156,7 +153,7 @@ body {
     overflow: hidden;
     width: 100%;
     height: auto;
-    margin: 90px 0 0 0;
+    margin: 70px 0 0 0;
     position: relative;
 }
 
@@ -359,7 +356,7 @@ body {
 .slideshow-navList {
     position: absolute;
     left: 50%;
-    bottom: 20px;
+    bottom: 10px;
     transform: translate(-50%, 0);
 }
 
@@ -386,7 +383,7 @@ body {
     font-size: 22px;
     font-weight: 600;
     text-align: center;
-    margin: 80px 0 50px 0;
+    margin: 50px 0 35px 0;
 }
 
 .img-style {
