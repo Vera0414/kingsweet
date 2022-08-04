@@ -277,8 +277,8 @@ createApp({
     methods: {
         minusnum(object) {
             object.number--;
-            if (object.number < 0) {
-                object.number = 0;
+            if (object.number < 1) {
+                object.number = 1;
             }
         },
         addnum(object) {

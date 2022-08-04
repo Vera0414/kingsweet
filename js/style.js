@@ -154,9 +154,11 @@ window.onload = function () {
 
 
     // --------------------產品頁面--------------------
+    // 按叉叉關閉視窗
     let commodity_content = document.querySelectorAll(".commodity-content");
     let commodity_detail = document.querySelectorAll(".commodity-detail");
     let commodity_fork = document.querySelectorAll(".commodity-detail-fork");
+    // 加入購物車按鈕
     for (let i = 0; i < commodity_content.length; i++) {
 
         commodity_content[i].onclick = function () {

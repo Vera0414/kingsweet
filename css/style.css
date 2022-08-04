@@ -791,7 +791,9 @@ body {
     transform: translate(-50%, 0);
 }
 
-.commodity-detail-btn span {
+.commodity-detail-btn a {
+    display: inline-block;
+    text-decoration: none;
     background-color: black;
     border-radius: 5px;
     font-size: 16px;
@@ -803,7 +805,7 @@ body {
     width: max-content;
 }
 
-.commodity-detail-btn span:hover {
+.commodity-detail-btn a:hover {
     background-color: rgb(250, 150, 0);
 }
 
@@ -909,4 +911,118 @@ body {
 .store-txt p {
     font-size: 16px;
     line-height: 26px;
+}
+
+/* --------------------購物車-------------------- */
+
+table {
+    border-collapse: collapse;
+    border: .5px solid rgb(230, 230, 230);
+    font-size: 16px;
+}
+
+thead {
+    display: none;
+}
+
+.cart-null {
+    font-size: 26px;
+    text-align: center;
+    padding: 100px 0 150px 0;
+    display: none;
+}
+
+.itemlist tr {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 20px 10px;
+    border-bottom: .5px solid rgb(230, 230, 230);
+    box-sizing: border-box;
+}
+
+.itemlist td {
+    display: block;
+}
+
+.itemlist td:nth-child(2)~td {
+    padding: 10px 50px;
+}
+
+.itemlist td:nth-child(2) {
+    text-align: center;
+}
+
+.itemlist td:nth-child(2) img {
+    width: 80%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.itemlist input[type="checkbox"],
+.itemlist .fa-times {
+    cursor: pointer;
+}
+
+.itemlist input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+}
+
+.itemlist .fa-times {
+    color: rgb(250, 150, 0);
+}
+
+.itemlist .fa-times:after {
+    content: "刪除";
+}
+
+.cart-price {
+    width: 100%;
+    padding: 50px;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.cart-price span:nth-child(1) {
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.cart-price span:nth-child(2) {
+    font-size: 36px;
+    font-weight: 600;
+    color: rgb(220, 0, 0);
+}
+
+.cart-price span:nth-child(3) {
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.cart-btn a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    background-color: rgb(50, 50, 50);
+    width: 150px;
+    text-align: center;
+    margin: 20px 20px;
+    transition: .2s;
+}
+
+.cart-btn a:hover {
+    background-color: rgb(250, 150, 0);
+}
+
+.cart-btn .fa-angle-left {
+    margin-right: 5px;
+}
+
+.cart-btn .fa-angle-right {
+    margin-left: 5px;
 }

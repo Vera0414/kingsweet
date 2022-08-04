@@ -44,7 +44,7 @@
                         <li><a href="./store.html">門市據點</a></li>
                         <li><a href="./login.html">會員登入</a></li>
                         <li><a href="./register.html">註冊會員</a></li>
-                        <li><a href="javascript:void(0)">購物車<span>(0)</span></a></li>
+                        <li><a href="./cart.html">購物車(<span class="cart-num">0</span>)</a></li>
                     </ul>
                     <div class="navbar-icon">
                         <a href="javascript:void(0)" title="搜尋">
@@ -52,8 +52,8 @@
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </a>
                         <a href="./login.html" title="登入/註冊"><i class="fa fa-user" aria-hidden="true"></i></a>
-                        <a href="javascript:void(0)" title="購物車">
-                            <span id="cart-number">0</span>
+                        <a href="./cart.html" title="購物車">
+                            <span id="cart-number" class="cart-num">0</span>
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -80,7 +80,7 @@
                         </div>
                         <div class="commodity-txt">
                             <h4>{{item.name}}</h4>
-                            <p>NT${{item.price}}/{{item.unit}}</p>
+                            <p>NT$<span>{{item.price}}</span>/{{item.unit}}</p>
                         </div>
                     </div>
                     <div class="commodity-detail">
@@ -99,16 +99,16 @@
                                     <label for="detail-number">數量</label>
                                     <input type="button" :value="minus" @click="minusnum(item)">
                                     <input type="number" class="num" :value="item.number" oninput="if(value>10)value=10"
-                                        oninput="if(value<0)value=0">
+                                        oninput="if(value<1)value=1">
                                     <input type="button" :value="add" @click="addnum(item)">
                                 </div>
                                 <div class="commodity-detail-btn">
-                                    <span>
+                                    <a class="addcart">
                                         <p>加入購物車</p>
-                                    </span>
-                                    <span>
+                                    </a>
+                                    <a href="./cart.html" class="buynow">
                                         <p>立即購買</p>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -168,6 +168,7 @@
 
     <script src="./js/style.js"></script>
     <script src="./js/commodity.js"></script>
+    <script src="./js/cart.js"></script>
 
 </body>
 

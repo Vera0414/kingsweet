@@ -11,20 +11,12 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/rwd.css">
-    <script src="./js/slideshow.js"></script>
-    <script src="./js/style.js"></script>
-    <title>國王甜點 KINGSWEET</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>購物車</title>
     <link rel="icon" type="image/x-icon" href="./image/logo_icon.png">
 </head>
 
 <body>
-
-
-    <span class="top-btn">
-        <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </span>
-
-
 
     <div class="container">
         <div class="header-shadow">
@@ -68,97 +60,34 @@
                 </div>
             </div>
         </div>
-        <div class="slideshow">
-            <div class="slideshow-img">
-                <div><img src="./image/1920x03.jpg" alt="夏威夷豆蜜果塔"></div>
-                <div><img src="./image/1920x01.jpg" alt="三種起司金黃瀑布"></div>
-                <div><img src="./image/1920x02.jpg" alt="貝也納冰心麵包"></div>
-                <div><img src="./image/1920x03.jpg" alt="夏威夷豆蜜果塔"></div>
-                <div><img src="./image/1920x01.jpg" alt="三種起司金黃瀑布"></div>
-            </div>
-            <div class="slideshow-btn">
-                <div class="slideshow-btn-style leftbtn"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-                <div class="slideshow-btn-style rightbtn"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-            </div>
-            <div class="slideshow-navList">
-                <a href="javascript:void(0)"></a>
-                <a href="javascript:void(0)"></a>
-                <a href="javascript:void(0)"></a>
-            </div>
-        </div>
     </div>
 
 
 
     <div class="container-middle">
-        <div class="state">
+        <div class="middle-style">
             <div class="txt-style">
-                <h1>最新動態</h1>
+                <h1>購物車</h1>
             </div>
-            <div class="img-style">
-                <div class="stateimg-wrap">
-                    <a href="./bread.html">
-                        <div class="state-imgframe">
-                            <div class="state-txt">
-                                <p>麵包專區</p>
-                            </div>
-                            <div class="state-img">
-                                <div class="hover-background"></div>
-                                <img src="./image/20220610003903.jpg" alt="麵包專區">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="stateimg-wrap">
-                    <a href="./dessert.html">
-                        <div class="state-imgframe">
-                            <div class="state-txt">
-                                <p>手工點心</p>
-                            </div>
-                            <div class="state-img">
-                                <div class="hover-background"></div>
-                                <img src="./image/1100x.jpg" alt="手工點心">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="./store.html">
-                        <div class="state-imgframe">
-                            <div class="state-txt">
-                                <p>門市據點</p>
-                            </div>
-                            <div class="state-img">
-                                <div class="hover-background"></div>
-                                <img src="./image/homemade-cake-bakery-round-board-mockup.jpg" alt="門市據點">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="news">
-            <div class="txt-style">
-                <h1>最新消息</h1>
-            </div>
-            <div class="news-imgframe">
-                <div class="news-txt">
-                    <p>人氣伴手禮「百香果果凍」，</p>
-                    <p>嚴選埔里百香果原汁。</p>
-                    <p>甜酸的完美搭配，加上滑潤的口感，</p>
-                    <p>老少咸宜。冷藏後風味更佳！</p>
-                </div>
-                <div class="news-img">
-                    <img src="./image/ahw7w-5sthw.jpg" class="align-left">
-                </div>
-            </div>
-            <div class="news-imgframe">
-                <div class="news-txt">
-                    <p>會員消費滿1200元，</p>
-                    <p>滿額免運，</p>
-                    <p>今天就加入免費會員!</p>
-                </div>
-                <div class="news-img">
-                    <img src="./image/aeg5h-dkxkx.jpg" class="align-right">
-                </div>
+            <table class="cart-item">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>商品資訊</th>
+                        <th></th>
+                        <th>單價</th>
+                        <th>數量</th>
+                        <th>小計</th>
+                        <th>刪除</th>
+                    </tr>
+                </thead>
+                <tbody class="itemlist"></tbody>
+            </table>
+            <p class="cart-null"></p>
+            <div class="cart-price"></div>
+            <div class="cart-btn">
+                <a href="./index.html"><i class="fa fa-angle-left" aria-hidden="true"></i>繼續購物</a>
+                <a href="javascript:void(0)">下一步<i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
@@ -211,6 +140,8 @@
 
 
 
+    <script src="./js/style.js"></script>
+    <script src="./js/commodity.js"></script>
     <script src="./js/cart.js"></script>
 
 </body>
