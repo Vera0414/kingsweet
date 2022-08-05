@@ -684,6 +684,7 @@ body {
     align-items: center;
     position: relative;
     flex-direction: column;
+    background-color: #fff;
 }
 
 .commodity-detail-fork {
